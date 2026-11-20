@@ -175,10 +175,12 @@
       color: #666;
     }
 
-    /* ===== 店舗情報（位置情報非表示・中央寄せレイアウト） ===== */
+    /* ===== 店舗情報・アクセス ===== */
     .info-container {
-      max-width: 600px;
-      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
     }
 
     .info-table {
@@ -197,6 +199,13 @@
     .info-table th {
       width: 30%;
       color: var(--accent-color);
+    }
+
+    .map-box iframe {
+      width: 100%;
+      height: 280px;
+      border: 0;
+      border-radius: 8px;
     }
 
     /* ===== フッター ===== */
@@ -235,6 +244,10 @@
       .hero h1 {
         font-size: 1.5rem;
       }
+
+      .info-container {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -247,7 +260,7 @@
       <ul>
         <li><a href="#concept">コンセプト</a></li>
         <li><a href="#menu">メニュー</a></li>
-        <li><a href="#info">店舗情報</a></li>
+        <li><a href="#access">店舗情報</a></li>
       </ul>
     </nav>
   </header>
@@ -256,9 +269,109 @@
   <div class="hero">
     <h1>一杯のコーヒーから始まる、<br>穏やかな日常を。</h1>
     <p>厳選した豆を店内で丁寧に焙煎。季節の素材を使った手作りスイーツとともにお楽しみください。</p>
-    <a href="#info" class="btn">店舗情報を見る</a>
+    <a href="#access" class="btn">店舗へのアクセス</a>
   </div>
 
   <!-- コンセプト -->
   <section id="concept">
-    <h2>CON
+    <h2>CONCEPT<span>こだわり</span></h2>
+    <div class="concept">
+      <p>
+        木漏れ日が差し込む落ち着いた空間で、日常の忙しさを少しだけ忘れて過ごせる場所を目指しています。<br><br>
+        コーヒー豆は世界各地から厳選したシングルオリジンを中心に、毎朝少しずつ焙煎。お一人での読書や作業にも、大切な人との語らいにも寄り添うお店です。
+      </p>
+    </div>
+  </section>
+
+  <!-- メニュー -->
+  <div class="menu-bg">
+    <section id="menu">
+      <h2>MENU<span>おすすめメニュー</span></h2>
+      <div class="menu-grid">
+
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80" alt="ハンドドリップコーヒー">
+          <div class="menu-info">
+            <div class="menu-header">
+              <span>自家焙煎ブレンド</span>
+              <span class="price">¥550</span>
+            </div>
+            <p class="menu-desc">豊かな香りとすっきりとした後味が特徴の看板メニューです。</p>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=600&q=80" alt="季節のフルーツタルト">
+          <div class="menu-info">
+            <div class="menu-header">
+              <span>季節のフルーツタルト</span>
+              <span class="price">¥680</span>
+            </div>
+            <p class="menu-desc">旬の果実をふんだんに使用した、甘さ控えめの自家製タルト。</p>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1525351484163-7529414342d8?auto=format&fit=crop&w=600&q=80" alt="厚切りトーストプレート">
+          <div class="menu-info">
+            <div class="menu-header">
+              <span>厚切りバタートースト</span>
+              <span class="price">¥750</span>
+            </div>
+            <p class="menu-desc">国産小麦の食パンをカリッと焼き上げました。ランチにもおすすめです。</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <!-- 店舗情報・アクセス -->
+  <section id="access">
+    <h2>ACCESS & INFO<span>店舗情報</span></h2>
+    <div class="info-container">
+      <table class="info-table">
+        <tr>
+          <th>店名</th>
+          <td>CAFE KOMOREBI（カフェ コモレビ）</td>
+        </tr>
+        <tr>
+          <th>住所</th>
+          <td>〒0000-0000 ○○県○○市〇〇町1-2-3</td>
+        </tr>
+        <tr>
+          <th>営業時間</th>
+          <td>10:00〜19:00（L.O. 18:30）</td>
+        </tr>
+        <tr>
+          <th>定休日</th>
+          <td>水曜日・第2木曜日</td>
+        </tr>
+        <tr>
+          <th>電話番号</th>
+          <td>00-00-0000</td>
+        </tr>
+        <tr>
+          <th>席数・設備</th>
+          <td>24席 / 全席禁煙 / Wi-Fi・電源あり</td>
+        </tr>
+      </table>
+
+      <div class="map-box">
+        <!-- Googleマップで店舗を検索し「共有」→「地図を埋め込む」のHTMLコードをここに貼り替えます -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52072.82561578016!2d139.313405!3d35.337222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6019ad263c8b2201%3A0x603f03d0c9b1177!2z56We5aWI5bed55yM5bmz5aGa5biC!5e0!3m2!1sja!2sjp!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer>
+    <div class="sns-links">
+      <a href="#" target="_blank" rel="noopener">Instagram</a>
+      <a href="#" target="_blank" rel="noopener">X (Twitter)</a>
+    </div>
+    <p>&copy; 2026 CAFE KOMOREBI All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
